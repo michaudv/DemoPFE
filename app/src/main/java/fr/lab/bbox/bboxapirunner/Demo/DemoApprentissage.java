@@ -16,7 +16,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 import fr.bouyguestelecom.bboxapi.bboxapi.Bbox;
 import fr.bouyguestelecom.bboxapi.bboxapi.callback.IBboxGetCurrentChannel;
@@ -32,18 +36,17 @@ public class DemoApprentissage extends Fragment {
 
     private final static String TAG = "DEMO_APPRENTISSAGE";
 
-    private Context ctxt;
-    private Handler handler;
+    private View view;
+    private TextView channelView;
+
     private int currentChannel;
+
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.apprentissage_layout, container, false);
-        ctxt = getActivity().getApplicationContext();
-        handler = new Handler();
-
+        view = inflater.inflate(R.layout.apprentissage_layout, container, false);
         return view;
     }
 
@@ -52,53 +55,64 @@ public class DemoApprentissage extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         int counter = 0;
-        ImageView informationbBubble = (ImageView) getView().findViewById(R.id.imageView);
+        ImageView informationbBubble = (ImageView) view.findViewById(R.id.imageView);
+        channelView = (TextView) view.findViewById(R.id.positionid);
 
-        returnLiveChannel();
+        channelDeamon();
 
     }
 
-    public void returnLiveChannel() {
+    private void setViewChannel(int channel) {
 
-        ctxt = getActivity().getApplicationContext();
-        handler = new Handler();
+        channelView.setText(Integer.toString(channel));
+    }
+
+    public void channelDeamon() {
 
         final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
-        String ip = sharedPref.getString("bboxip", "");
+        final String ip = sharedPref.getString("bboxip", "");
         Log.i("x-ip", ip);
 
-        Bbox.getInstance().getCurrentChannel(ip,
-                getResources().getString(fr.bouyguestelecom.bboxapi.R.string.APP_ID),
-                getResources().getString(fr.bouyguestelecom.bboxapi.R.string.APP_SECRET),
-                new IBboxGetCurrentChannel() {
+        Timer timer = new Timer();
+        TimerTask task = new TimerTask() {
+            public void run() {
+                getActivity().runOnUiThread(new Runnable() {
                     @Override
-                    public void onResponse(final Channel channel) {
-                        //Choper ici lrs info
-                        currentChannel = channel.getPositionId();
-                        handler.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                Toast.makeText(ctxt,
-                                        "mediaService : " + channel.getMediaService() + "\n" +
-                                                "mediaState : " + channel.getMediaState() + "\n" +
-                                                "mediaTitle : " + channel.getMediaTitle() + "\n" +
-                                                "positionId : " + channel.getPositionId()
-                                        , Toast.LENGTH_LONG).show();
-                            }
-                        });
-                    }
+                    public void run() {
 
-                    @Override
-                    public void onFailure(Request request, int errorCode) {
-                        handler.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                Toast.makeText(ctxt, "Get current channel failed", Toast.LENGTH_SHORT).show();
-                            }
-                        });
+                        Bbox.getInstance().getCurrentChannel(ip,
+                                getResources().getString(fr.bouyguestelecom.bboxapi.R.string.APP_ID),
+                                getResources().getString(fr.bouyguestelecom.bboxapi.R.string.APP_SECRET),
+                                new IBboxGetCurrentChannel() {
+                                    @Override
+                                    public void onResponse(final Channel channel) {
+                                        //Choper ici lrs info
+                                        currentChannel = channel.getPositionId();
+                                        Log.i("CURRENT_CHANNEL", channel.toString());
+
+                               /* handler.post(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(ctxt,
+                                                "mediaService : " + channel.getMediaService() + "\n" +
+                                                        "mediaState : " + channel.getMediaState() + "\n" +
+                                                        "mediaTitle : " + channel.getMediaTitle() + "\n" +
+                                                        "positionId : " + channel.getPositionId()
+                                                , Toast.LENGTH_LONG).show();
+                                    }
+                                });*/
+                                    }
+
+                                    @Override
+                                    public void onFailure(Request request, int errorCode) {
+                                        Log.d("CURRENT_CHANNEL", "Get current channel failed");
+                                    }
+                                });
+                        setViewChannel(currentChannel);
                     }
                 });
-
+            }
+        };
+        timer.schedule(task,1000,1000);
     }
-
 }

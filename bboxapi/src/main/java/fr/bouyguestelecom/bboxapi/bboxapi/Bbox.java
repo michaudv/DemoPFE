@@ -138,7 +138,7 @@ public class Bbox implements IBbox {
                         mToken = tokenCloud;
                     } else {
                         iBboxGetToken.onFailure(call.request(), response.code());
-                        Log.e(TAG, "Get token failed");
+                        Log.e(TAG, "Get token failed !");
                     }
 
                     response.body().close();
