@@ -73,7 +73,7 @@ public class DemoApprentissage extends Fragment {
                 new IBboxGetCurrentChannel() {
                     @Override
                     public void onResponse(final Channel channel) {
-                        //Choper ici lrs info
+                        //Get informations
                         currentChannel = channel.getPositionId();
                         handler.post(new Runnable() {
                             @Override
