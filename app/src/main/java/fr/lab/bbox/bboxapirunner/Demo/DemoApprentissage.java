@@ -1,4 +1,4 @@
-package fr.lab.bbox.bboxapirunner.Application;
+package fr.lab.bbox.bboxapirunner.Demo;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -39,14 +39,12 @@ public class DemoApprentissage extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        //returning our layout file
 
-        View view = inflater.inflate(R.layout.frag_media_getcurrentprogram, container, false);
-
+        View view = inflater.inflate(R.layout.apprentissage_layout, container, false);
         ctxt = getActivity().getApplicationContext();
         handler = new Handler();
-        return inflater.inflate(R.layout.apprentissage_layout, container, false);
 
+        return view;
     }
 
     @Override
@@ -56,23 +54,9 @@ public class DemoApprentissage extends Fragment {
         int counter = 0;
         ImageView informationbBubble = (ImageView) getView().findViewById(R.id.imageView);
 
-        while(counter !=5){
-            returnLiveChannel();
-            if(currentChannel == 15){
-                int width = informationbBubble.getWidth();
-                int heigth = informationbBubble.getHeight();
-
-                
-            }
-        }
-
-
-
-
-
+        returnLiveChannel();
 
     }
-
 
     public void returnLiveChannel() {
 

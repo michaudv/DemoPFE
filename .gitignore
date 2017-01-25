@@ -6,7 +6,5 @@
 /app/build
 /bboxapi/build
 
-.idea/*
-app/app.iml 
 DemoPFE.iml
-bboxapi/bboxapi.iml
+

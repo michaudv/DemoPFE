@@ -32,7 +32,5 @@
                 android:layout_gravity="center"
                 android:id="@+id/textView12" />
         </FrameLayout>
-
     </RelativeLayout>
-
 </LinearLayout>
