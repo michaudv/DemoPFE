@@ -1,26 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
 
-    <TextView
-        android:text="Page Detection Bluetooth"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/test"
-        android:textSize="30sp"
-        android:layout_marginTop="10dp"/>
+        android:layout_height="match_parent">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Try it out !"
-        android:id="@+id/try_getchannellist"
-        android:layout_gravity="center_horizontal" />
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:srcCompat="@drawable/bbox_miami"
+            android:layout_centerInParent="true"
+            android:id="@+id/bbox_miami" />
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/listViewChannelList"
-        android:layout_gravity="center_horizontal" />
+        <ImageView
+            android:layout_width="290dp"
+            android:layout_height="290dp"
+            android:layout_centerInParent="true"
+            android:id="@+id/circle1" />
+
+        <ImageView
+            android:layout_width="380dp"
+            android:layout_height="380dp"
+            android:layout_centerInParent="true"
+            android:id="@+id/circle2" />
+
+        <ImageView
+            android:layout_width="470dp"
+            android:layout_height="470dp"
+            android:layout_centerInParent="true"
+            android:id="@+id/circle3" />
+
+        <ImageView
+            android:layout_width="580dp"
+            android:layout_height="580dp"
+            android:layout_centerInParent="true"
+            android:id="@+id/circle4" />
+
+        <TextView
+            android:text="Foyer X"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingTop="130dp"
+            android:id="@+id/foyerID" />
+
+        <TextView
+            android:text="Localisation"
+            android:textSize="17dp"
+            android:textColor="#000000"
+            android:textStyle="italic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingTop="180dp"
+            android:id="@+id/locBbox" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="150dp"
+            app:srcCompat="@drawable/oneplus3"
+            android:id="@+id/smartphone1"
+            android:layout_alignBottom="@+id/circle2"
+            android:layout_toEndOf="@+id/circle1"
+            android:layout_marginStart="14dp"
+            android:animateLayoutChanges="true" />
+
+        <TextView
+            android:text=""
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/namePhone2"
+            android:layout_above="@+id/circle1"
+            android:layout_toStartOf="@+id/smartphone2"
+            android:layout_marginEnd="17dp" />
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="150dp"
+            app:srcCompat="@drawable/galaxyj5"
+            android:id="@+id/smartphone2"
+            android:layout_above="@+id/foyerID"
+            android:layout_alignStart="@+id/circle3"
+            android:animateLayoutChanges="true" />
+
+        <TextView
+            android:text=""
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/namePhone1"
+            android:layout_marginStart="24dp"
+            android:layout_below="@+id/bbox_miami"
+            android:layout_toEndOf="@+id/smartphone1" />
+
+    </RelativeLayout>
+
 </LinearLayout>

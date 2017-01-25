@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DemoBouygues-master.iml" filepath="$PROJECT_DIR$/DemoBouygues-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DemoPFE.iml" filepath="$PROJECT_DIR$/DemoPFE.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/bboxapi/bboxapi.iml" filepath="$PROJECT_DIR$/bboxapi/bboxapi.iml" />
     </modules>

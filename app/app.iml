@@ -124,7 +124,6 @@
     <orderEntry type="library" exported="" name="support-vector-drawable-23.4.0" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-23.4.0" level="project" />
     <orderEntry type="module" module-name="bboxapi" exported="" />
-    <orderEntry type="library" exported="" name="android-android-23" level="project" />
     <orderEntry type="library" exported="" name="okio-1.8.0" level="project" />
     <orderEntry type="library" exported="" name="okhttp-3.3.1" level="project" />
     <orderEntry type="library" exported="" name="jmdns-3.4.2-r353-1" level="project" />
