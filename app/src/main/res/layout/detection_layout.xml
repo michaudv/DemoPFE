@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -61,7 +62,8 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:paddingTop="180dp"
-            android:id="@+id/locBbox" />
+            android:id="@+id/locBbox"
+            />
 
         <ImageView
             android:layout_width="80dp"
@@ -71,7 +73,8 @@
             android:layout_alignBottom="@+id/circle2"
             android:layout_toEndOf="@+id/circle1"
             android:layout_marginStart="14dp"
-            android:animateLayoutChanges="true" />
+            android:animateLayoutChanges="true"
+            android:visibility="invisible" />
 
         <TextView
             android:text=""
@@ -83,7 +86,8 @@
             android:id="@+id/namePhone2"
             android:layout_above="@+id/circle1"
             android:layout_toStartOf="@+id/smartphone2"
-            android:layout_marginEnd="17dp" />
+            android:layout_marginEnd="17dp"
+            android:visibility="invisible"/>
 
         <ImageView
             android:layout_width="110dp"
@@ -92,7 +96,8 @@
             android:id="@+id/smartphone2"
             android:layout_above="@+id/foyerID"
             android:layout_alignStart="@+id/circle3"
-            android:animateLayoutChanges="true" />
+            android:animateLayoutChanges="true"
+            android:visibility="invisible" />
 
         <TextView
             android:text=""
@@ -104,7 +109,8 @@
             android:id="@+id/namePhone1"
             android:layout_marginStart="24dp"
             android:layout_below="@+id/bbox_miami"
-            android:layout_toEndOf="@+id/smartphone1" />
+            android:layout_toEndOf="@+id/smartphone1"
+            android:visibility="invisible"/>
 
         <TextView
             android:text="Benjam"
@@ -116,7 +122,8 @@
             android:id="@+id/nameBeacon"
             android:layout_below="@+id/bbox_miami"
             android:layout_toStartOf="@+id/circle4"
-            android:layout_marginEnd="15dp" />
+            android:layout_marginEnd="15dp"
+            android:visibility="invisible" />
 
         <ImageView
             android:layout_width="80dp"
@@ -124,7 +131,8 @@
             app:srcCompat="@drawable/beacon"
             android:id="@+id/beacon"
             android:layout_alignBottom="@+id/circle2"
-            android:layout_toStartOf="@+id/circle2" />
+            android:layout_toStartOf="@+id/circle2"
+            android:visibility="invisible" />
 
     </RelativeLayout>
 

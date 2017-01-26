@@ -148,6 +148,8 @@ public class DemoDetection extends Fragment {
         name1.setText(DemoConstants.nameDevice1);
 
         if (DemoConstants.deviceVisible1) {
+            phone1.setVisibility(View.VISIBLE);
+            name1.setVisibility(View.VISIBLE);
             phone1.animate().alpha(1.0f).setDuration(800);
             name1.animate().alpha(1.0f).setDuration(800);
         } else {
@@ -163,6 +165,8 @@ public class DemoDetection extends Fragment {
         name2.setText(DemoConstants.nameDevice2);
 
         if (DemoConstants.deviceVisible2) {
+            phone2.setVisibility(View.VISIBLE);
+            name2.setVisibility(View.VISIBLE);
             phone2.animate().alpha(1.0f).setDuration(800);
             name2.animate().alpha(1.0f).setDuration(800);
         } else {
@@ -178,6 +182,8 @@ public class DemoDetection extends Fragment {
         name3.setText(DemoConstants.nameDevice3);
 
         if (DemoConstants.deviceVisible3) {
+            phone3.setVisibility(View.VISIBLE);
+            name3.setVisibility(View.VISIBLE);
             phone3.animate().alpha(1.0f).setDuration(800);
             name3.animate().alpha(1.0f).setDuration(800);
         } else {
