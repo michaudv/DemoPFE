@@ -111,8 +111,8 @@
             android:layout_height="150dp"
             app:srcCompat="@drawable/beacon"
             android:id="@+id/beacon"
-            android:layout_alignBottom="@+id/circle1"
-            android:layout_toStartOf="@+id/circle3" />
+            android:layout_alignBottom="@+id/circle2"
+            android:layout_alignStart="@+id/namePhone2" />
 
         <TextView
             android:text=""
@@ -121,10 +121,10 @@
             android:textColor="#000000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="43dp"
             android:id="@+id/nameBeacon"
-            android:layout_below="@+id/foyerID"
-            android:layout_toStartOf="@+id/beacon" />
+            android:layout_below="@+id/bbox_miami"
+            android:layout_toStartOf="@+id/circle4"
+            android:layout_marginEnd="25dp" />
 
     </RelativeLayout>
 
