@@ -106,16 +106,8 @@
             android:layout_below="@+id/bbox_miami"
             android:layout_toEndOf="@+id/smartphone1" />
 
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="150dp"
-            app:srcCompat="@drawable/beacon"
-            android:id="@+id/beacon"
-            android:layout_alignBottom="@+id/circle2"
-            android:layout_alignStart="@+id/namePhone2" />
-
         <TextView
-            android:text=""
+            android:text="Benjam"
             android:textSize="18dp"
             android:textStyle="bold"
             android:textColor="#000000"
@@ -124,7 +116,15 @@
             android:id="@+id/nameBeacon"
             android:layout_below="@+id/bbox_miami"
             android:layout_toStartOf="@+id/circle4"
-            android:layout_marginEnd="25dp" />
+            android:layout_marginEnd="15dp" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="150dp"
+            app:srcCompat="@drawable/beacon"
+            android:id="@+id/beacon"
+            android:layout_alignBottom="@+id/circle2"
+            android:layout_toStartOf="@+id/circle2" />
 
     </RelativeLayout>
 

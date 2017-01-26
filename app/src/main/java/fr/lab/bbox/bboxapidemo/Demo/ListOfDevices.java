@@ -13,6 +13,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Timer;
@@ -78,10 +80,7 @@ public class ListOfDevices extends Fragment {
                         try {
                             if (service != null) {
                                 listDevices = (ArrayList<String>) service.getDevicesList();
-                                for (String s:
-                                     listDevices) {
-                                    Log.i(TAG, "NAME " + s);
-                                }
+                                displayList(listDevices);
                             }
                             Log.i(TAG, "Timer (ListOfDevices) OK");
                         }
@@ -97,18 +96,31 @@ public class ListOfDevices extends Fragment {
         timer.schedule(doAsynchronousTask, 1000, refreshPeriod);
     }
 
+    /**
+     * Display the list of devices bluetooth, in 1 Textview
+     * @param listDevices
+     */
+    public void displayList(ArrayList<String> listDevices) {
+
+        StringBuilder builder = new StringBuilder();
+        for (String s: listDevices) {
+            Log.i(TAG, "NAME " + s);
+            builder.append("- " + s + "\n");
+        }
+
+        TextView list = (TextView) view.findViewById(R.id.listView);
+        list.setText(builder.toString());
+    }
+
     @Override
     public void onPause() {
         super.onPause();
-        //timer.cancel();
-        Log.i(TAG, "onPause : Timer ListOfDevices canceled");
+        timer.cancel();
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        //timer.cancel();
-        Log.i(TAG, "onStop : Timer ListOfDevices canceled");
     }
 
     @Override
@@ -119,8 +131,6 @@ public class ListOfDevices extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        //timer.cancel();
-        Log.i(TAG, "onDestroy : Timer ListOfDevices canceled");
     }
 
 }

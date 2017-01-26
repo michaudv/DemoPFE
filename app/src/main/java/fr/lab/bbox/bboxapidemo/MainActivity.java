@@ -2,12 +2,8 @@ package fr.lab.bbox.bboxapidemo;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.content.ComponentName;
-import android.content.Intent;
-import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.IBinder;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -26,8 +22,6 @@ public class MainActivity extends AppCompatActivity {
     private final static String TAG = "MAIN_ACTIVITY";
 
     public Fragment fragment = null;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +83,6 @@ public class MainActivity extends AppCompatActivity {
                 fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
             }
         }
-
         return true;
     }
 

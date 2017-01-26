@@ -41,7 +41,6 @@ public class DemoDetection extends Fragment {
     private Timer timer;
 
     private int refreshPeriod = 5 * 1000;
-    private boolean firstDisplay;
 
     private IService service;
     ServiceConnection conn = new ServiceConnection() {
@@ -273,15 +272,12 @@ public class DemoDetection extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
-        //timer.cancel();
-        Log.i(TAG, "onPause : Timer DemoDetection canceled");
+        timer.cancel();
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        //timer.cancel();
-        Log.i(TAG, "onStop : Timer DemoDetection canceled");
     }
 
     @Override
@@ -292,8 +288,6 @@ public class DemoDetection extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        //timer.cancel();
-        Log.i(TAG, "onDestroy : Timer DemoDetection canceled");
     }
 
 }
