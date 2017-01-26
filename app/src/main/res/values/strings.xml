@@ -2,7 +2,7 @@
 
     // APP
 
-    <string name="app_name">BboxAPI Client</string>
+    <string name="app_name">BboxAPI_Demo</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
