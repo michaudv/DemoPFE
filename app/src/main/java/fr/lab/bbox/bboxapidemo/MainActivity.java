@@ -63,11 +63,9 @@ public class MainActivity extends AppCompatActivity {
                 case 20 :
                     fragment = new DemoStatistiques();
                     break;
-                /*
                 case 21 :
                     fragment = new DemoApprentissage();
                     break;
-                    */
                 case 22 :
                     fragment = new DemoFoyer();
                     break;

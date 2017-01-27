@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF">
@@ -9,40 +10,291 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <FrameLayout
+        <GridLayout
+            android:id="@+id/gridTheme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/frameLayout2"
-            android:layout_marginEnd="223dp"
-            android:layout_centerVertical="true"
+            android:layout_marginBottom="13dp"
+            android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true">
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                app:srcCompat="@drawable/rond"
+            <FrameLayout
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/frameLayoutInformation"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:layout_row="2"
+                android:layout_column="2">
 
-                android:id="@+id/imageView"/>
+                <ImageView
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/circlepurple"
+                    android:id="@+id/bubbleInformation"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:text="Informations"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:id="@+id/information" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/frameLayoutCulture"
+                android:layout_gravity="bottom"
+
+                android:layout_row="1"
+                android:layout_column="2">
+
+                <ImageView
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/circlepink"
+                    android:id="@+id/bubbleCulture"
+                    android:visibility="visible"
+                    android:adjustViewBounds="false" />
+
+                <TextView
+                    android:text="Culture"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:id="@+id/culture" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/frameLayoutMusique"
+                android:layout_gravity="center"
+                android:layout_marginTop="35dp"
+                android:layout_row="2"
+
+                android:layout_column="0">
+
+                <ImageView
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/circlegreen"
+                    android:id="@+id/bubbleMusique"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:text="Musique"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:id="@+id/musique" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/frameLayoutJeunnesse"
+                android:layout_marginBottom="35dp"
+                android:layout_row="2"
+                android:layout_column="1">
+
+                <ImageView
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/circleyellow"
+                    android:id="@+id/bubbleJeunesse"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:text="Jeunesse"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:id="@+id/jeunesse" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/frameLayoutGeneraliste"
+                android:layout_marginTop="25dp"
+                android:layout_row="1"
+                android:layout_column="0">
+
+                <ImageView
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/circleblue"
+                    android:id="@+id/bubbleGeneraliste"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:text="Généraliste"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:id="@+id/generaliste" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/frameLayoutSport"
+                android:layout_gravity="center"
+                android:layout_row="1"
+                android:layout_marginBottom="5dp"
+                android:layout_column="1">
+
+                <ImageView
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/circlered"
+                    android:id="@+id/bubbleSport"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:text="Sport"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:id="@+id/Sport" />
+            </FrameLayout>
+
+        </GridLayout>
+
+
+        <GridLayout
+            android:id="@+id/gridChaine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp">
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:id="@+id/logo1"
+                app:srcCompat="@drawable/white"
+                android:layout_alignTop="@+id/logo3"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"/>
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/logo3"
+                app:srcCompat="@drawable/white"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:layout_row="2"
+                android:layout_column="0"
+                android:layout_gravity="center"/>
 
             <TextView
-                android:text="Informations"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
+                android:layout_marginTop="20dp"
+                android:text=""
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:id="@+id/textView12" />
+                android:id="@+id/chaine1"
+                android:layout_marginLeft="10dp"
+                android:textSize="20dp"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_gravity="center"/>
 
-        </FrameLayout>
+            <TextView
+                android:textColor="#000000"
+                android:text=""
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/chaine3"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_row="2"
+                android:layout_column="1"
+                android:layout_gravity="center"/>
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:id="@+id/logo2"
+                app:srcCompat="@drawable/white"
+                android:layout_marginTop="20dp"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:textColor="#000000"
+                android:text=""
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/chaine2"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_row="1"
+                android:layout_column="1"
+                android:layout_gravity="center"/>
+        </GridLayout>
 
         <TextView
-            android:text="Channel"
+            android:text="Apprentissage"
             android:textColor="#000000"
-            android:layout_width="135dp"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:id="@+id/positionid"
-            android:layout_marginTop="71dp"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_alignStart="@+id/textView12"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:id="@+id/textView13" />
+
+        <TextView
+            android:text="Chaînes"
+            android:textColor="#000000"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/textView12"
+
+            android:layout_below="@+id/textView13"
+            android:layout_alignStart="@+id/gridChaine"
+            android:layout_marginTop="13dp" />
+
+        <TextView
+            android:text="Thématiques"
+            android:textColor="#000000"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView11"
+            android:layout_marginStart="15dp"
+            android:layout_alignBaseline="@+id/textView12"
+            android:layout_alignBottom="@+id/textView12"
+            android:layout_alignStart="@+id/gridTheme" />
+
+
     </RelativeLayout>
+
 </LinearLayout>
