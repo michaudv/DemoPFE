@@ -5,6 +5,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -13,6 +14,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.RemoteException;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,12 +22,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
+import fr.bouyguestelecom.bboxapi.bboxapi.Bbox;
+import fr.bouyguestelecom.bboxapi.bboxapi.callback.IBboxDisplayToast;
 import fr.lab.bbox.bboxapirunner.IService;
 import fr.lab.bbox.bboxapirunner.R;
+import okhttp3.Request;
 
 
 /**
@@ -35,6 +41,9 @@ import fr.lab.bbox.bboxapirunner.R;
 public class DemoDetection extends Fragment {
 
     private final static String TAG = "DEMO_DETECTION";
+    private Boolean showToast1 = false;
+    private Boolean showToast2 = false;
+    private Boolean showToast3 = false;
 
     public Context context;
     private View view;
@@ -96,24 +105,33 @@ public class DemoDetection extends Fragment {
                                     if(service.getDevice(DemoConstants.macAddress1)) {
                                         Log.i(TAG, DemoConstants.nameDevice1 + " visible");
                                         DemoConstants.deviceVisible1 = true;
+                                        showToast(1);
+                                        showToast1 = true;
                                     } else {
                                         DemoConstants.deviceVisible1 = false;
+                                        showToast1 = false;
                                     }
 
                                     // Device 2 (Galaxy J5 Victor)
                                     if(service.getDevice(DemoConstants.macAddress2)) {
                                         Log.i(TAG, DemoConstants.nameDevice2 + " visible");
                                         DemoConstants.deviceVisible2 = true;
+                                        showToast(2);
+                                        showToast2 = true;
                                     } else {
                                         DemoConstants.deviceVisible2 = false;
+                                        showToast2 = false;
                                     }
 
                                     // Device 3 (Beacon SIGNUL)
                                     if(service.getDevice(DemoConstants.macAddress3)) {
                                         Log.i(TAG, DemoConstants.nameDevice3 + " visible");
                                         DemoConstants.deviceVisible3 = true;
+                                        showToast(3);
+                                        showToast3 = true;
                                     } else {
                                         DemoConstants.deviceVisible3 = false;
+                                        showToast3 = false;
                                     }
                                 }
                             } catch (RemoteException e) {
@@ -296,4 +314,50 @@ public class DemoDetection extends Fragment {
         super.onDestroy();
     }
 
+    private void showToast(int nb){
+
+        String name;
+
+        switch (nb){
+            case 1 :
+                name = "Alex";
+                break;
+            case 2 :
+                name = "Victor";
+                break;
+            case 3 :
+                name = "Benjamin";
+                break;
+            default :
+                name = "";
+                break;
+
+        }
+
+        if(nb == 1 && showToast1 == false || nb == 2 && showToast2 == false || nb == 3 && showToast3 == false){
+
+            final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
+
+            final String ip = sharedPref.getString("bboxip", "");
+            Log.i("x-ip", ip);
+
+            Log.i("Toast","Send toast for " + name);
+
+            Bbox.getInstance().displayToast(ip,
+                    getResources().getString(fr.bouyguestelecom.bboxapi.R.string.APP_ID),
+                    getResources().getString(fr.bouyguestelecom.bboxapi.R.string.APP_SECRET),
+                    "Bonjour " + name, "#f0f0f0", "4000", "550", "950",
+                    new IBboxDisplayToast() {
+                        @Override
+                        public void onResponse() {
+                            Log.i("Toast","response");
+                        }
+
+                        @Override
+                        public void onFailure(Request request, int errorCode) {
+                            Log.i("Toast","Failure");
+                        }
+                    });
+        }
+    }
 }
