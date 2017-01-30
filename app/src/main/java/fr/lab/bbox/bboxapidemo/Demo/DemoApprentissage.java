@@ -215,11 +215,11 @@ public class DemoApprentissage extends Fragment {
                 break;
             case 3 : logo1.setImageResource(R.drawable.france3);
                 break;
-            case 5 : logo1.setImageResource(R.drawable.arte);
+            case 5 : logo1.setImageResource(R.drawable.france5);
                 break;
             case 6 : logo1.setImageResource(R.drawable.m6);
                 break;
-            case 7 : logo1.setImageResource(R.drawable.france5);
+            case 7 : logo1.setImageResource(R.drawable.arte);
                 break;
             case 8 : logo1.setImageResource(R.drawable.c8);
                 break;

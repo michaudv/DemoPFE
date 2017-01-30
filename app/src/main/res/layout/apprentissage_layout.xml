@@ -33,7 +33,7 @@
                     android:layout_gravity="center"
                     app:srcCompat="@drawable/circlepurple"
                     android:id="@+id/bubbleInformation"
-                    android:visibility="visible" />
+                    android:visibility="invisible" />
 
                 <TextView
                     android:text="Informations"
@@ -59,7 +59,7 @@
                     android:layout_gravity="center"
                     app:srcCompat="@drawable/circlepink"
                     android:id="@+id/bubbleCulture"
-                    android:visibility="visible"
+                    android:visibility="invisible"
                     android:adjustViewBounds="false" />
 
                 <TextView
@@ -87,7 +87,7 @@
                     android:layout_gravity="center"
                     app:srcCompat="@drawable/circlegreen"
                     android:id="@+id/bubbleMusique"
-                    android:visibility="visible" />
+                    android:visibility="invisible" />
 
                 <TextView
                     android:text="Musique"
@@ -112,7 +112,7 @@
                     android:layout_gravity="center"
                     app:srcCompat="@drawable/circleyellow"
                     android:id="@+id/bubbleJeunesse"
-                    android:visibility="visible" />
+                    android:visibility="invisible" />
 
                 <TextView
                     android:text="Jeunesse"
@@ -137,7 +137,7 @@
                     android:layout_gravity="center"
                     app:srcCompat="@drawable/circleblue"
                     android:id="@+id/bubbleGeneraliste"
-                    android:visibility="visible" />
+                    android:visibility="invisible" />
 
                 <TextView
                     android:text="Généraliste"
@@ -163,7 +163,7 @@
                     android:layout_gravity="center"
                     app:srcCompat="@drawable/circlered"
                     android:id="@+id/bubbleSport"
-                    android:visibility="visible" />
+                    android:visibility="invisible" />
 
                 <TextView
                     android:text="Sport"

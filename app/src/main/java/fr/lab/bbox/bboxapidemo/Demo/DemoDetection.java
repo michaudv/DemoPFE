@@ -343,21 +343,41 @@ public class DemoDetection extends Fragment {
 
             Log.i("Toast","Send toast for " + name);
 
-            Bbox.getInstance().displayToast(ip,
-                    getResources().getString(fr.bouyguestelecom.bboxapi.R.string.APP_ID),
-                    getResources().getString(fr.bouyguestelecom.bboxapi.R.string.APP_SECRET),
-                    "Bonjour " + name, "#f0f0f0", "4000", "550", "950",
-                    new IBboxDisplayToast() {
-                        @Override
-                        public void onResponse() {
-                            Log.i("Toast","response");
-                        }
 
-                        @Override
-                        public void onFailure(Request request, int errorCode) {
-                            Log.i("Toast","Failure");
-                        }
-                    });
+    if(nb ==  1) {
+        Bbox.getInstance().displayToast(ip,
+                getResources().getString(fr.bouyguestelecom.bboxapi.R.string.APP_ID),
+                getResources().getString(fr.bouyguestelecom.bboxapi.R.string.APP_SECRET),
+                "            Bonjour " + name + "! L'episode d'hier de la villa des coeurs brisés est disponible en replay            ", "#f0f0f0", "5000", "550", "950",
+                new IBboxDisplayToast() {
+                    @Override
+                    public void onResponse() {
+                        Log.i("Toast", "response");
+                    }
+
+                    @Override
+                    public void onFailure(Request request, int errorCode) {
+                        Log.i("Toast", "Failure");
+                    }
+                });
+
+    }else {
+        Bbox.getInstance().displayToast(ip,
+                getResources().getString(fr.bouyguestelecom.bboxapi.R.string.APP_ID),
+                getResources().getString(fr.bouyguestelecom.bboxapi.R.string.APP_SECRET),
+                "            Bonjour " + name + "!            ", "#f0f0f0", "5000", "550", "950",
+                new IBboxDisplayToast() {
+                    @Override
+                    public void onResponse() {
+                        Log.i("Toast", "response");
+                    }
+
+                    @Override
+                    public void onFailure(Request request, int errorCode) {
+                        Log.i("Toast", "Failure");
+                    }
+                });
+    }
         }
     }
 }
