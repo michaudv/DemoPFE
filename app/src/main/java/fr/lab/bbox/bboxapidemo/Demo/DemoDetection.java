@@ -194,7 +194,7 @@ public class DemoDetection extends Fragment {
 
         // Device 3
         ImageView phone3 = (ImageView) view.findViewById(R.id.beacon);
-        phone3.setImageResource(R.drawable.beacon);
+        phone3.setImageResource(R.drawable.flower_parrot);
 
         TextView name3 = (TextView) view.findViewById(R.id.nameBeacon);
         name3.setText(DemoConstants.nameDevice3);
@@ -326,7 +326,7 @@ public class DemoDetection extends Fragment {
                 name = "Victor";
                 break;
             case 3 :
-                name = "Benjamin";
+                name = "FlowerPower";
                 break;
             default :
                 name = "";

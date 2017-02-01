@@ -17,7 +17,7 @@ public class DemoConstants {
     public static boolean deviceVisible2 = false;
 
     // Third registered device
-    public static String nameDevice3 = "Benjam";
+    public static String nameDevice3 = "FlowerPower";
     public static String macAddress3 = "F4:B8:5E:51:69:91";
     public static boolean deviceVisible3 = false;
 }
