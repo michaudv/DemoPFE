@@ -182,8 +182,8 @@ public class DemoApprentissage extends Fragment {
     public void updateBubble(ImageView bubble){
 
         bubble.setVisibility(View.VISIBLE);
-        bubble.getLayoutParams().height = bubble.getHeight() + 20;
-        bubble.getLayoutParams().width = bubble.getWidth() + 20;
+        bubble.getLayoutParams().height = bubble.getHeight() + 40;
+        bubble.getLayoutParams().width = bubble.getWidth() + 40;
         bubble.requestLayout();
     }
 

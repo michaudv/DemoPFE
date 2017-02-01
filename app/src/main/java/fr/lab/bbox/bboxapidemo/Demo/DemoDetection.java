@@ -348,7 +348,7 @@ public class DemoDetection extends Fragment {
         Bbox.getInstance().displayToast(ip,
                 getResources().getString(fr.bouyguestelecom.bboxapi.R.string.APP_ID),
                 getResources().getString(fr.bouyguestelecom.bboxapi.R.string.APP_SECRET),
-                "            Bonjour " + name + "! L'episode d'hier de la villa des coeurs brisés est disponible en replay            ", "#f0f0f0", "5000", "550", "950",
+                "            Bonjour " + name + "! L'episode d'hier des Reines du shopping est disponible en replay            ", "#f0f0f0", "long", "550", "950",
                 new IBboxDisplayToast() {
                     @Override
                     public void onResponse() {
@@ -365,7 +365,7 @@ public class DemoDetection extends Fragment {
         Bbox.getInstance().displayToast(ip,
                 getResources().getString(fr.bouyguestelecom.bboxapi.R.string.APP_ID),
                 getResources().getString(fr.bouyguestelecom.bboxapi.R.string.APP_SECRET),
-                "            Bonjour " + name + "!            ", "#f0f0f0", "5000", "550", "950",
+                "            Bonjour " + name + "!            ", "#f0f0f0", "long", "550", "950",
                 new IBboxDisplayToast() {
                     @Override
                     public void onResponse() {
