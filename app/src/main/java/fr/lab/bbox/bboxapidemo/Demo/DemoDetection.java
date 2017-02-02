@@ -344,7 +344,7 @@ public class DemoDetection extends Fragment {
             Log.i("Toast","Send toast for " + name);
 
 
-    if(nb ==  1) {
+    if(nb ==  2) {
         Bbox.getInstance().displayToast(ip,
                 getResources().getString(fr.bouyguestelecom.bboxapi.R.string.APP_ID),
                 getResources().getString(fr.bouyguestelecom.bboxapi.R.string.APP_SECRET),
