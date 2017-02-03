@@ -361,6 +361,8 @@ public class DemoDetection extends Fragment {
                     }
                 });
 
+    } else if (nb == 3) {
+
     }else {
         Bbox.getInstance().displayToast(ip,
                 getResources().getString(fr.bouyguestelecom.bboxapi.R.string.APP_ID),
